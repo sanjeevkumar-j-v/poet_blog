@@ -1,0 +1,7 @@
+<h1>PROFILE</h1>
+<% if (locals.user) { %>
+    <p>
+        <%= locals.user.name %>
+    </p>
+    <a href="/users/sign-out">Log Out</a>
+<% } %>
