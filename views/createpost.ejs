@@ -1,0 +1,23 @@
+<section class="post-form">
+    <h1>Create post</h1>
+    <form action="/posts/create" method="post">
+        
+        <label for="content">கவிதை:</label>
+        <textarea id="content" name="content" rows="30" cols="80" placeholder="Type your poem here...">
+        </textarea>
+        <br>
+        <label for="category">Choose a Category:</label>
+        <select name="category" id="category">
+        <option value="valkkai">வாழ்க்கை</option>
+        <option value="kadhal">காதல்</option>
+        <option value="natpu">நட்பு</option>
+        <option value="iyarkai">இயற்கை</option>
+        <option value="thathuvam">தத்துவம்</option>
+        <option value="thesapatru">தேசப்பற்று</option>
+        <option value="ookkam">ஊக்கம்</option>
+        <option value="others">பிற கவிதைகள்</option>
+        </select>
+
+      <button type="submit">SUBMIT</button>
+    </form>
+  </section>
