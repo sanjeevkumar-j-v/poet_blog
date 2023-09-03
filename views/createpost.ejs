@@ -2,9 +2,9 @@
     <h1>Create post</h1>
     <form action="/posts/create" method="post">
         
-        <label for="content">கவிதை:</label>
-        <textarea id="content" name="content" rows="30" cols="80" placeholder="Type your poem here...">
-        </textarea>
+        <label for="heading">Heading</label>
+        <input type="text" id="heading" name="heading" required/>
+        
         <br>
         <label for="category">Choose a Category:</label>
         <select name="category" id="category">
@@ -17,7 +17,10 @@
         <option value="ookkam">ஊக்கம்</option>
         <option value="others">பிற கவிதைகள்</option>
         </select>
-
+        <br>
+        <label for="content">கவிதை:</label>
+        <textarea id="content" name="content" rows="30" cols="80" placeholder="Type your poem here...">
+        </textarea>
       <button type="submit">SUBMIT</button>
     </form>
   </section>

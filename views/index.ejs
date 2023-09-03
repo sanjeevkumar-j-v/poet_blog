@@ -11,5 +11,19 @@
     <a href="/users/sign-in">Sign In</a> <br>
     <a href="/users/sign-out">Sign Out</a> <br>
     <a href="/posts/create">Create post</a> <br>
+    <hr>
+    <br>
+    <% if (posts[0]) { %>
+      <% for (post of posts) { %>
+        <h1>Heading: <%= post.heading %></h1>
+        <h4>Category: <%= post.category %></h4>
+
+        <p style="white-space:pre"><%= post.content %></p>
+        <hr>
+      <% } %>
+    <% } else { %>
+      <h4>No poems posted yet.</h4>
+    <% } %>
+
   </body>
 </html>
