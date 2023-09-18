@@ -5,15 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>விதைக்குள் விருட்சம்</title>
+    
     <%- style %>
-
+    <style>
+      #loading {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #fff url('/images/trippytree.gif') no-repeat center;
+        z-index: 999999;
+      }
+    </style>
     <body
       x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
       x-init="
           darkMode = JSON.parse(localStorage.getItem('darkMode'));
           $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
       :class="{'b eh': darkMode === true}"
-    >
+      onload="loadfun()"
+      >
+      <div id="loading"></div>
+
       <!-- ===== Header Start ===== -->
       <header
         class="g s r vd ya cj"
@@ -176,7 +188,7 @@
 
               <ul>
                 <li><a href="#" class="sc xl vb">Home</a></li>
-                <li><a href="#" class="sc xl vb">All Posts</a></li>
+                <li><a href="/#" class="sc xl vb">All Posts</a></li>
                 <li>
                   <a href="#contact" class="sc xl vb">
                     Contact 
@@ -206,7 +218,7 @@
               <h4 class="kk wm tj ec">Newsletter</h4>
               <p class="ac qe">எதிர்கால அறிவிப்புகளைப் பெற குழுசேரவும்</p>
 
-              <form action="https://formbold.com/s/unique_form_id" method="POST">
+              <form action="#" method="POST">
                 <div class="i">
                   <input
                     type="text"
@@ -254,6 +266,45 @@
       </button>
       <!-- ====== Back To Top End ===== -->
 
+      <script>
+        function fadeOut( elem, ms )
+        {
+          if( ! elem )
+            return;
+
+          if( ms )
+          {
+            var opacity = 1;
+            var timer = setInterval( function() {
+              opacity -= 50 / ms;
+              if( opacity <= 0 )
+              {
+                clearInterval(timer);
+                opacity = 0;
+                elem.style.display = "none";
+                elem.style.visibility = "hidden";
+              }
+              elem.style.opacity = opacity;
+              elem.style.filter = "alpha(opacity=" + opacity * 100 + ")";
+            }, 50 );
+          }
+          else
+          {
+            elem.style.opacity = 0;
+            elem.style.filter = "alpha(opacity=0)";
+            elem.style.display = "none";
+            elem.style.visibility = "hidden";
+          }
+        }
+        var load = document.getElementById("loading");
+        
+        function loadfun() {
+          setTimeout(function() {
+            fadeOut(load, 1000)
+            // load.style.display = 'none';
+          }, 1500);  
+        }
+      </script>
     <%- script %>
 
     </body>
