@@ -9,13 +9,13 @@ router.get("/profile", passport.checkAuthentication, function (req, res) {
 
 router.get("/sign-up", function (req, res) {
   if(req.isAuthenticated()){
-    return res.redirect('/users/profile');
+    return res.redirect('/');
   }
   return res.render("signup");
 });
 router.get("/sign-in", function (req, res) {
   if(req.isAuthenticated()){
-    return res.redirect('/users/profile');
+    return res.redirect('/');
   }
   return res.render("signin");
 });
@@ -54,7 +54,7 @@ router.post(
   function (req, res) {
     // after login, redirect to faculty page by default
     // if the user is student it will be automatically redirected to student page
-    return res.redirect('/users/profile');
+    return res.redirect('/');
   }
 );
 
