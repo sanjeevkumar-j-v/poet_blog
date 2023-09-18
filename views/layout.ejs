@@ -91,7 +91,7 @@
               <p>
                   <%= locals.user.name %>
               </p>
-              <!-- <a href="/users/sign-out">Log Out</a> -->
+              <a href="/posts/create" :class="{ ' yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl" style="color: black;" >Create New</a>
               <a href="/users/sign-out" :class="{ ' yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl" style="color: black;" >Sign Out</a>
             <% } else { %>
               <a href="/users/sign-in" :class="{ ' yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl" style="color: black;" >Sign In</a>

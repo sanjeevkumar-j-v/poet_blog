@@ -1,26 +1,85 @@
-<section class="post-form">
-    <h1>Create post</h1>
-    <form action="/posts/create" method="post">
-        
-        <label for="heading">Heading</label>
-        <input type="text" id="heading" name="heading" required/>
-        
-        <br>
-        <label for="category">Choose a Category:</label>
-        <select name="category" id="category">
-        <option value="valkkai">வாழ்க்கை</option>
-        <option value="kadhal">காதல்</option>
-        <option value="natpu">நட்பு</option>
-        <option value="iyarkai">இயற்கை</option>
-        <option value="thathuvam">தத்துவம்</option>
-        <option value="thesapatru">தேசப்பற்று</option>
-        <option value="ookkam">ஊக்கம்</option>
-        <option value="others">பிற கவிதைகள்</option>
-        </select>
-        <br>
-        <label for="content">கவிதை:</label>
-        <textarea id="content" name="content" rows="30" cols="80" placeholder="Type your poem here...">
-        </textarea>
-      <button type="submit">SUBMIT</button>
-    </form>
-  </section>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="icon" href="images/logo.png">
+  
+<section id="contact" class="i pg fh rm ji gp uq">
+  <!-- Bg Shapes -->
+  <img src="images/shape-06.svg" alt="Shape" class="h aa y" />
+  <img src="images/shape-03.svg" alt="Shape" class="h ca u" />
+  <img src="images/shape-07.svg" alt="Shape" class="h w da ee" />
+  <img src="images/shape-12.svg" alt="Shape" class="h p s" />
+  <img src="images/shape-13.svg" alt="Shape" class="h r q" />
+
+  <!-- Section Title Start -->
+  <div
+    x-data="{ sectionTitle: `புதிய​ கவிதை​`, sectionTitleText: ``}"
+  >
+    <div class="animate_top bb ze rj ki xn vq">
+    <h2
+            x-text="sectionTitle"
+            class="fk vj pr kk wm on/5 gq/2 bb _b"
+    >
+    </h2>
+    <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+    </div>
+
+
+  </div>
+  <!-- Section Title End -->
+
+  <div class="i va bb ye ki xn wq jb mo">
+    <div class="tc uf sn tf rn un zf xl:gap-10">
+
+      <div class="animate_top w-full nn/5 uo vk sg hh sm yh tq">
+        <form action="#" method="POST">
+          <div class="tc sf yo ap zf ep qb">
+            <div class="vd to/2">
+              <label class="rc ac" for="fullname">Heading</label>
+              <input
+                type="text"
+                name="heading"
+                id="heading"
+                placeholder="Title"
+                class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+              />
+            </div>
+
+            <div class="vd to/2">
+              <label class="rc ac" for="category">Category</label>
+              <select name="category" id="category" class="d ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi">
+                <option value="valkkai">வாழ்க்கை</option>
+                <option value="kadhal">காதல்</option>
+                <option value="natpu">நட்பு</option>
+                <option value="iyarkai">இயற்கை</option>
+                <option value="thathuvam">தத்துவம்</option>
+                <option value="thesapatru">தேசப்பற்று</option>
+                <option value="ookkam">ஊக்கம்</option>
+                <option value="others">பிற கவிதைகள்</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fb">
+            <label class="rc ac" for="content">கவிதை</label>
+            <textarea
+              placeholder="கவிதை"
+              rows="4"
+              name="content"
+              id="content"
+              class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 ci"
+            ></textarea>
+          </div>
+
+          <div class="tc xf">
+            <button class="vc rg lk gh ml il hi gi _l">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+  <!-- Section Title End -->
+</section>
+
+<script defer src="javascripts/bundle.js"></script>
