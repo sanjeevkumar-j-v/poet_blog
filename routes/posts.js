@@ -14,4 +14,13 @@ router.post("/create", function (req, res) {
   })
 });
 
+
+router.get("/view/:postId", async function (req, res) {
+  var post = await Post.findById(req.params.postId);
+  res.render('post', {
+    post,
+    title: 'Muthu\'s Blog'
+  });
+});
+
 module.exports = router;

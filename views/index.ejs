@@ -61,6 +61,38 @@
 
     <div class="bb ye ki xn vq jb jo">
       <div class="wc qf pn xo zf iq">
+        <% if (posts[0]) { %>
+          <% for (post of posts) { %>
+            <!-- Blog Item -->
+            <div class="animate_top sg vk rm xm">
+              <div class="c rc i z-1 pg">
+                <img class="w-full" src="images/boy-studying.avif" alt="Blog" />
+
+                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+                  <a href="posts/view/<%=post._id%>" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                </div>
+              </div>
+
+              <div class="yh">
+                <div class="tc uf wf ag jq">
+                  <div class="tc wf ag">
+                    <img src="images/icon-man.svg" alt="User" />
+                    <p>அ. முத்துவேழப்பன்</p>
+                  </div>
+                  <div class="tc wf ag">
+                    <img src="images/icon-calender.svg" alt="Calender" />
+                    <p>03 Sep, 2023</p>
+                  </div>
+                </div>
+                <h4 class="ek tj ml il kk wm xl eq lb">
+                  <a href="posts/view/<%=post._id%>"><%= post.heading %></a>
+                </h4>
+              </div>
+            </div>
+          <% } %>
+        <% } else { %>
+          <h4>No poems posted yet.</h4>
+        <% } %>
         <!-- Blog Item -->
         <div class="animate_top sg vk rm xm">
           <div class="c rc i z-1 pg">
@@ -83,7 +115,7 @@
               </div>
               <div class="tc wf ag">
                 <img src="images/icon-calender.svg" alt="Calender" />
-                <p>03 Jul, 2023</p>
+                <p>02 Sep, 2023</p>
               </div>
             </div>
             <h4 class="ek tj ml il kk wm xl eq lb">
@@ -92,38 +124,6 @@
           </div>
         </div>
 
-        <!-- Blog Item -->
-        <div class="animate_top sg vk rm xm">
-          <div class="c rc i z-1 pg">
-            <img class="w-full" src="images/boy-studying.avif" alt="Blog" />
-
-            <div
-              class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10"
-            >
-              <a href="#" class="vc ek rg lk gh sl ml il gi hi"
-                >Read More</a
-              >
-            </div>
-          </div>
-
-          <div class="yh">
-            <div class="tc uf wf ag jq">
-              <div class="tc wf ag">
-                <img src="images/icon-man.svg" alt="User" />
-                <p>அ. முத்துவேழப்பன்</p>
-              </div>
-              <div class="tc wf ag">
-                <img src="images/icon-calender.svg" alt="Calender" />
-                <p>02 Jul, 2023</p>
-              </div>
-            </div>
-            <h4 class="ek tj ml il kk wm xl eq lb">
-              <a href="#">சிறுவனே</a>
-            </h4>
-          </div>
-        </div>
-
-        <!-- Blog Item -->
         <div class="animate_top sg vk rm xm">
           <div class="c rc i z-1 pg">
             <img class="w-full" src="images/anger.jpeg" alt="Blog" />
@@ -145,7 +145,7 @@
               </div>
               <div class="tc wf ag">
                 <img src="images/icon-calender.svg" alt="Calender" />
-                <p>01 Jul, 2023</p>
+                <p>01 Sep, 2023</p>
               </div>
             </div>
             <h4 class="ek tj ml il kk wm xl eq lb">
@@ -526,27 +526,3 @@
 </main>
 
 <script defer src="javascripts/bundle.js"></script>
-
-<!-- 
-
-
-    <a href="/users/sign-up">Sign Up</a> <br>
-    <a href="/users/sign-in">Sign In</a> <br>
-    <a href="/users/sign-out">Sign Out</a> <br>
-    <a href="/posts/create">Create post</a> <br>
-    <hr>
-    <br>
-    <% if (posts[0]) { %>
-      <% for (post of posts) { %>
-        <h1>Heading: <%= post.heading %></h1>
-        <h4>Category: <%= post.category %></h4>
-
-        <p style="white-space:pre"><%= post.content %></p>
-        <hr>
-      <% } %>
-    <% } else { %>
-      <h4>No poems posted yet.</h4>
-    <% } %>
-
-   -->
-
