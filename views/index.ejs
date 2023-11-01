@@ -94,69 +94,63 @@
           <h4>No poems posted yet.</h4>
         <% } %>
         <!-- Blog Item -->
-        <div class="animate_top sg vk rm xm">
-          <div class="c rc i z-1 pg">
-            <img class="w-full" src="images/poor.jpeg" alt="Blog" />
-
-            <div
-              class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10"
-            >
-              <a href="#" class="vc ek rg lk gh sl ml il gi hi"
-                >Read More</a
-              >
-            </div>
-          </div>
-
-          <div class="yh">
-            <div class="tc uf wf ag jq">
-              <div class="tc wf ag">
-                <img src="images/icon-man.svg" alt="User" />
-                <p>அ. முத்துவேழப்பன்</p>
-              </div>
-              <div class="tc wf ag">
-                <img src="images/icon-calender.svg" alt="Calender" />
-                <p>02 Sep, 2023</p>
-              </div>
-            </div>
-            <h4 class="ek tj ml il kk wm xl eq lb">
-              <a href="#">ஏழையின் பசி</a>
-            </h4>
-          </div>
-        </div>
-
-        <div class="animate_top sg vk rm xm">
-          <div class="c rc i z-1 pg">
-            <img class="w-full" src="images/anger.jpeg" alt="Blog" />
-
-            <div
-              class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10"
-            >
-              <a href="#" class="vc ek rg lk gh sl ml il gi hi"
-                >Read More</a
-              >
-            </div>
-          </div>
-
-          <div class="yh">
-            <div class="tc uf wf ag jq">
-              <div class="tc wf ag">
-                <img src="images/icon-man.svg" alt="User" />
-                <p>அ. முத்துவேழப்பன்</p>
-              </div>
-              <div class="tc wf ag">
-                <img src="images/icon-calender.svg" alt="Calender" />
-                <p>01 Sep, 2023</p>
-              </div>
-            </div>
-            <h4 class="ek tj ml il kk wm xl eq lb">
-              <a href="#">சீற்றம்</a>
-            </h4>
-          </div>
-        </div>
       </div>
     </div>
   </section>
   <!-- ===== Blog End ===== -->
+
+  <section class="ji gp uq" id="posts">
+    <!-- Section Title Start -->
+    <div x-data="{ sectionTitle: `அதிகம் பிடித்த கவிதைகள்`, sectionTitleText: ``}">
+      <div
+      x-data="{ sectionTitle: `அதிகம் பிடித்த கவிதைகள்`, sectionTitleText: ``}"
+    >
+      <div class="animate_top bb ze rj ki xn vq">
+        <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
+        <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+      </div>
+
+    </div>
+    <!-- Section Title End -->
+
+    <div class="bb ye ki xn vq jb jo">
+      <div class="wc qf pn xo zf iq">
+        <% if (mostLikedPosts[0]) { %>
+          <% for (post of mostLikedPosts) { %>
+            <!-- Blog Item -->
+            <div class="animate_top sg vk rm xm">
+              <div class="c rc i z-1 pg">
+                <img class="w-full" src="images/boy-studying.avif" alt="Blog" />
+
+                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+                  <a href="posts/view/<%=post._id%>" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                </div>
+              </div>
+
+              <div class="yh">
+                <div class="tc uf wf ag jq">
+                  <div class="tc wf ag">
+                    <img src="images/icon-man.svg" alt="User" />
+                    <p>அ. முத்துவேழப்பன்</p>
+                  </div>
+                  <div class="tc wf ag">
+                    <img src="images/icon-calender.svg" alt="Calender" />
+                    <p>03 Sep, 2023</p>
+                  </div>
+                </div>
+                <h4 class="ek tj ml il kk wm xl eq lb">
+                  <a href="posts/view/<%=post._id%>"><%= post.heading %></a>
+                </h4>
+              </div>
+            </div>
+          <% } %>
+        <% } else { %>
+          <h4>No poems posted yet.</h4>
+        <% } %>
+        <!-- Blog Item -->
+      </div>
+    </div>
+  </section>
 
   <!-- ===== About Start ===== -->
   <!-- <section class="ji gp uq 2xl:ud-py-35 pg">
