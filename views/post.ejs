@@ -20,18 +20,39 @@
           <p style="white-space:pre; width: auto;">
             <%=post.content%>
           </p>
-
-          <!-- <div class="wc qf pn dg cb">
-            <img src="images/blog-04.png" alt="Blog" />
-            <img src="images/blog-05.png" alt="Blog" />
+          <div class="likes tc rn">
+            <!-- <div class="tc sf xf"> <div class="ek vj kk wm">Likes: </div></div> -->
+          <% if (locals.user) { %>
+            <div class="heart" id="like-post" data-likes="<%= post.likes_count %>"></div>
+          <% } else { %>
+            <div class="heart always-active" id="like-post"></div>
+          <% } %>
+            <div class="tc sf xf"> <div class="ek vj kk wm likes-count"><%= post.likes_count %> Likes </div></div>
           </div>
 
-          <h2 class="ek vj 2xl:ud-text-title-lg kk wm nb qb">The powerful force of humanity</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur leo. Ut venenatis rhoncus quam sed condimentum. Curabitur vel
-            turpis in dolor volutpat imperdiet in ut mi. Integer non volutpat nulla. Nunc elementum elit viverra, tempus quam non, interdum ipsum.
-          </p> -->
-
+          <% if (locals.user) { %>
+            <div class="i va bb ye jb">
+              <form action="/comments/add" method="POST">
+                <div class="fb">
+                  <h2 class="ek vj 2xl:ud-text-title-lg kk wm nb gb">Please add your comments</h2>
+                  <textarea
+                  placeholder="Type comment here..."
+                  rows="2"
+                  name="content"
+                  id="content"
+                  class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 ci"
+                  ></textarea>
+                </div>
+                <input type="hidden" name="username" value="<%=locals.user.name%>">
+                <input type="hidden" name="user" value="<%=locals.user._id%>">
+                <input type="hidden" name="post" value="<%=post.id%>">
+                <div class="tc xf">
+                  <button class="vc rg lk gh ml il hi gi _l">Add Comment</button>
+                </div>
+              </form>
+            </div>
+          <% } %>
+            
           <ul class="tc wf bg sb">
             <li>
               <p class="sj kk wm tb">Share On:</p>
@@ -79,7 +100,31 @@
               </a>
             </li>
           </ul>
+
+          <div class="i va bb ye jb">
+            <h2 class="ek vj 2xl:ud-text-title-lg kk wm nb gb">Comments:</h2>
+
+            <% if (comments[0]) { %>
+              <% for (comment of comments) { %>
+                <div class="ai">
+                  <div class="tc uf wf ag jq">
+                    <div class="tc wf ag">
+                      <img src="images/icon-man.svg" alt="User" />
+                      <p><%= comment.username %></p>
+                    </div>
+                  </div>
+                  <h4 class="tj kk wm qb">
+                    <%= comment.content %>
+                  </h4>
+                </div>
+              <% } %>
+            <% } else { %>
+              <h4>No comments added yet.</h4>
+            <% } %>
+
+          </div>
           
+
         </div>
       </div>
 
@@ -109,7 +154,7 @@
               </button>
             </div>
           </form>
-        </div>
+                </div>
 
         <div class="animate_top fb">
           <h4 class="tj kk wm qb">Categories</h4>
@@ -143,7 +188,7 @@
           </ul>
         </div>
 
-        <div class="animate_top">
+<div class="animate_top">
           <h4 class="tj kk wm qb">Related Posts</h4>
 
           <div>
