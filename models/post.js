@@ -23,6 +23,7 @@ const postSchema = new mongoose.Schema(
     },
     likes_count: {
       type: Number,
+      default: 1
     },
   },
   {

@@ -129,7 +129,7 @@
       </div>
 
       <div class="jn/2 so">
-        <div class="animate_top fb">
+        <!-- <div class="animate_top fb">
           <form action="#">
             <div class="i">
               <input
@@ -154,7 +154,32 @@
               </button>
             </div>
           </form>
-                </div>
+        </div> -->
+
+        <div class="animate_top">
+          <h4 class="tj kk wm qb">Related Posts</h4>
+
+          <div>
+            <div class="tc fg 2xl:ud-gap-6 qb">
+              <img src="images/poor.jpeg" alt="Blog" style="width: 100px;" />
+              <h5 class="wj kk wm xl bn ml il">
+                <a href="#">ஏழையின் பசி</a>
+              </h5>
+            </div>
+            <div class="tc fg 2xl:ud-gap-6 qb">
+              <img src="images/anger.jpeg" alt="Blog" style="width: 100px;"/>
+              <h5 class="wj kk wm xl bn ml il">
+                <a href="#">சீற்றம்</a>
+              </h5>
+            </div>
+            <!-- <div class="tc fg 2xl:ud-gap-6">
+              <img src="images/blog-small-03.png" alt="Blog" />
+              <h5 class="wj kk wm xl bn ml il">
+                <a href="#">Tips to quickly improve your coding speed.</a>
+              </h5>
+            </div> -->
+          </div>
+        </div>
 
         <div class="animate_top fb">
           <h4 class="tj kk wm qb">Categories</h4>
@@ -188,30 +213,6 @@
           </ul>
         </div>
 
-<div class="animate_top">
-          <h4 class="tj kk wm qb">Related Posts</h4>
-
-          <div>
-            <div class="tc fg 2xl:ud-gap-6 qb">
-              <img src="images/poor.jpeg" alt="Blog" style="width: 100px;" />
-              <h5 class="wj kk wm xl bn ml il">
-                <a href="#">ஏழையின் பசி</a>
-              </h5>
-            </div>
-            <div class="tc fg 2xl:ud-gap-6 qb">
-              <img src="images/anger.jpeg" alt="Blog" style="width: 100px;"/>
-              <h5 class="wj kk wm xl bn ml il">
-                <a href="#">சீற்றம்</a>
-              </h5>
-            </div>
-            <!-- <div class="tc fg 2xl:ud-gap-6">
-              <img src="images/blog-small-03.png" alt="Blog" />
-              <h5 class="wj kk wm xl bn ml il">
-                <a href="#">Tips to quickly improve your coding speed.</a>
-              </h5>
-            </div> -->
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -380,3 +381,36 @@
 </section>
 
 <script defer src="javascripts/bundle.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+  let executed = false;
+  $(function() {
+  $(".heart").on("click", function(e) {
+    if (!executed) {
+      executed = true;
+      $(this).addClass("is-active");
+      let self = this;
+      
+      e.preventDefault();
+      
+      $.ajax({
+        type: 'POST',
+        url: '/like/<%=post.id%>',
+      })
+      .done(function(data) {
+        
+        let likesCount = parseInt($(self).attr('data-likes'));
+        console.log(likesCount);
+        likesCount += 1;
+        
+        $(self).attr('data-likes', likesCount);
+        $(".likes-count").html(`${likesCount} Likes`);
+        
+      })
+      .fail(function(errData) {
+        console.log('error in completing the request');
+      });
+    }
+  });
+  });
+</script>
