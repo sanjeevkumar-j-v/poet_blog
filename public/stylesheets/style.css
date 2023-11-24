@@ -2631,3 +2631,6 @@ h1,  h2,  h3,  h4,  h5,  h6{
 .white-heading {
   color: #fff;
 }
+footer {
+  background-color: #acff62;
+}
