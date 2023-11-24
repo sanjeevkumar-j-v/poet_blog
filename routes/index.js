@@ -9,7 +9,7 @@ const Post = require('../models/post');
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
-  var newPosts = await Post.find({}).sort({createdAt: -1}).limit(3);
+  var newPosts = await Post.find({}).sort({createdAt: -1}).limit(6);
   var mostLikedPosts = await Post.find({}).sort({likes_count: -1}).limit(3);
 
   res.render('index', {
