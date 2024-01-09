@@ -18,7 +18,8 @@
 
           <ul class="tc uf cg 2xl:ud-gap-15 fb">
             <li><span class="rc kk wm">Author: </span> அ. முத்துவேழப்பன்</li>
-            <li><span class="rc kk wm">Published On: </span> 02 Jul, 2023</li>
+            <li><span class="rc kk wm">Published On: </span> <%let date = new Date(post.createdAt);%>
+              <%=date.toLocaleDateString('en-GB')%></li>
             <li><span class="rc kk wm">Category: </span> <%=post.category%></li>
           </ul>
 
