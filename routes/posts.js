@@ -27,4 +27,9 @@ router.get("/view/:postId", async function (req, res) {
   });
 });
 
+router.get("/delete/:postId", async function (req, res) {
+  await Post.findByIdAndDelete(req.params.postId);
+  res.redirect('/');
+});
+
 module.exports = router;

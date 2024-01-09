@@ -10,6 +10,11 @@
           <img src="images/boy-studying.avif" alt="Blog" />
 
           <h2 class="ek vj 2xl:ud-text-title-lg kk wm nb gb"><%=post.heading%></h2>
+          <% if (locals.user) { %>
+            <% if (locals.user.name == 'Muthuvezhappan') { %>
+              <h2 class="ek vj 2xl:ud-text-title-lg kk wm gb" style="color: red; text-decoration: underline;"><a href="/posts/delete/<%= post._id %>">DELETE</a></h2>
+            <% } %>
+          <% } %>
 
           <ul class="tc uf cg 2xl:ud-gap-15 fb">
             <li><span class="rc kk wm">Author: </span> அ. முத்துவேழப்பன்</li>
