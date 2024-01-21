@@ -25,6 +25,10 @@ const postSchema = new mongoose.Schema(
       type: Number,
       default: 1
     },
+    views: {
+      type: Number,
+      default: 1
+    },
   },
   {
     timestamps: true,

@@ -17,7 +17,7 @@ router.post("/create", function (req, res) {
 
 
 router.get("/view/:postId", async function (req, res) {
-  var post = await Post.findById(req.params.postId);
+  var post = await Post.findByIdAndUpdate(req.params.postId, {$inc : {'views' : 1}},);
   var comments = await Comment.find({post: req.params.postId});
 
   res.render('post', {
