@@ -62,12 +62,12 @@
           >
             <nav>
               <ul class="tc _o sf yo cg ep">
-                <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
-                <li><a href="/" class="xl">All Posts</a></li>
+                <li><a href="/" class="xl red" :class="{ 'mk': page === 'home' }">Home</a></li>
+                <li><a href="/" class="xl red">All Posts</a></li>
                 <li class="c i" x-data="{ dropdown: false }">
                   <a
                     href="#"
-                    class="xl tc wf yf bg"
+                    class="xl red tc wf yf bg"
                     @click.prevent="dropdown = !dropdown"
                     :class="{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
                   >
@@ -94,7 +94,7 @@
                   </ul>
                   <!-- Dropdown End -->
                 </li>
-                <li><a href="#contact" class="xl">Contact</a></li>
+                <li><a href="#contact" class="xl red">Contact</a></li>
               </ul>
             </nav>
 
@@ -302,7 +302,7 @@
           setTimeout(function() {
             fadeOut(load, 1000)
             // load.style.display = 'none';
-          }, 1500);  
+          }, 0);  
         }
       </script>
     <%- script %>

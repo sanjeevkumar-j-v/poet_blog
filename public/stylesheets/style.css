@@ -1595,6 +1595,9 @@ h1,  h2,  h3,  h4,  h5,  h6{
 .jk{
   line-height: 1.75rem;
 }
+.red {
+  color: #ff2d2d;
+}
 .kk{
   --tw-text-opacity: 1;
   color: rgb(24 28 49 / var(--tw-text-opacity));
