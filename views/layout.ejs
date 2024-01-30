@@ -63,7 +63,7 @@
             <nav>
               <ul class="tc _o sf yo cg ep">
                 <li><a href="/" class="xl red" :class="{ 'mk': page === 'home' }">Home</a></li>
-                <li><a href="/" class="xl red">All Posts</a></li>
+                <li><a href="/posts/category/all" class="xl red">All Posts</a></li>
                 <li class="c i" x-data="{ dropdown: false }">
                   <a
                     href="#"
@@ -82,15 +82,15 @@
 
                   <!-- Dropdown Start -->
                   <ul class="a" :class="{ 'tc': dropdown }">
-                    <li><a href="#" class="xl" :class="{ 'mk': page === 'blog-grid' }">வாழ்க்கை</a></li>
-                    <li><a href="#" class="xl" :class="{ 'mk': page === 'blog-single' }">உறவு</a></li>
-                    <li><a href="#" class="xl" :class="{ 'mk': page === 'signin' }">நட்பு</a></li>
-                    <li><a href="#" class="xl" :class="{ 'mk': page === 'signup' }">இயற்கை</a></li>
-                    <li><a href="#" class="xl" :class="{ 'mk': page === '404' }">காதல்</a></li>
-                    <li><a href="#" class="xl" :class="{ 'mk': page === '404' }">தத்துவம்</a></li>
-                    <li><a href="#" class="xl" :class="{ 'mk': page === '404' }">தேசப்பற்று</a></li>
-                    <li><a href="#" class="xl" :class="{ 'mk': page === '404' }">ஊக்கம்</a></li>   
-                    <li><a href="#" class="xl" :class="{ 'mk': page === '404' }">பிற கவிதைகள்</a></li>
+                    <li><a href="/posts/category/valkkai" class="xl" >வாழ்க்கை</a></li>
+                    <li><a href="/posts/category/natpu" class="xl" >நட்பு</a></li>
+                    <li><a href="/posts/category/iyarkai" class="xl" >இயற்கை</a></li>
+                    <li><a href="/posts/category/kadhal" class="xl" >காதல்</a></li>
+                    <li><a href="/posts/category/thathuvam" class="xl" >தத்துவம்</a></li>
+                    <li><a href="/posts/category/thesapatru" class="xl" >தேசப்பற்று</a></li>
+                    <li><a href="/posts/category/ookkam" class="xl" >ஊக்கம்</a></li>   
+                    <li><a href="/posts/category/uravu" class="xl" >உறவு</a></li>
+                    <li><a href="/posts/category/others" class="xl" >பிற கவிதைகள்</a></li>
                   </ul>
                   <!-- Dropdown End -->
                 </li>

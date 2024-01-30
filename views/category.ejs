@@ -1,0 +1,79 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="icon" href="/images/logo.png">
+
+<main>
+
+  <section id="heading" class="fixed-bg-1 " style="">
+    <div class="container">
+        <div class="left">
+            <img src="/images/zha.png" alt="">
+        </div>
+        <div class="right">
+            விதைக்குள் விருட்சம்
+        </div>
+    </div>
+  </section>
+
+
+  <section class="ji gp uq fixed-bg-2" id="posts">
+    <!-- Section Title Start -->
+    <!-- <div
+      x-data="{ sectionTitle: `<%= title %> கவிதைகள்`, sectionTitleText: ``}"
+    >
+      <div class="animate_top bb ze rj ki xn vq">
+      <h2
+              x-text="sectionTitle"
+              class="fk vj pr kk wm on/5 gq/2 bb _b white-heading"
+      >
+      </h2>
+      <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+      </div>
+
+
+    </div> -->
+    <!-- Section Title End -->
+
+    <div class="bb ye ki xn vq jb jo">
+      <div class="wc qf pn xo zf iq">
+        <% if (posts[0]) { %>
+          <% for (post of posts) { %>
+            <div class="animate_top sg vk rm xm post-card">
+              <div class="c rc i z-1 pg">
+                <img class="w-full" src="images/boy-studying.avif" alt="Blog" />
+
+                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+                  <a href="posts/view/<%=post._id%>" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                </div>
+              </div>
+
+              <div class="yh">
+                <h4 class="ek tj ml il kk wm xl eq vb">
+                  <a href="posts/view/<%=post._id%>"><%= post.heading %></a>
+                </h4>
+                <div class="tc uf wf ag jq yf">
+                  <div class="tc wf ag">
+                    <img src="images/heart.svg" alt="Heart" width="15px"/>
+                    <p><%= post.likes_count %> Likes</p>
+                  </div>
+                  <div class="tc wf ag">
+                    <img src="images/icon-calender.svg" alt="Calender" />
+                    <p>
+                      <%let date = new Date(post.createdAt);%>
+                      <%=date.toLocaleDateString('en-GB')%>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% } %>
+        <% } else { %>
+          <h4>No poems posted yet.</h4>
+        <% } %>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<script defer src="javascripts/bundle.js"></script>

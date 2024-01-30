@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', express.static(path.join(__dirname, 'public')));
 app.use('/posts', express.static(path.join(__dirname, 'public')));
 app.use('/posts/view', express.static(path.join(__dirname, 'public')));
+app.use('/posts/category', express.static(path.join(__dirname, 'public')));
 
 // // mongo strore is used to store session cookie
 app.use(

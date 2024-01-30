@@ -15,7 +15,6 @@ router.post("/create", function (req, res) {
   })
 });
 
-
 router.get("/view/:postId", async function (req, res) {
   var post = await Post.findByIdAndUpdate(req.params.postId, {$inc : {'views' : 1}},);
   var comments = await Comment.find({post: req.params.postId});
@@ -30,6 +29,20 @@ router.get("/view/:postId", async function (req, res) {
 router.get("/delete/:postId", async function (req, res) {
   await Post.findByIdAndDelete(req.params.postId);
   res.redirect('/');
+});
+
+router.get("/category/:category", async function (req, res) {
+  var posts;
+  if (req.params.category == 'all') {
+    posts = await Post.find({}).sort({createdAt: -1}); // need to handle load more option
+  } else {
+    posts = await Post.find({category: req.params.category}).sort({createdAt: -1}); // need to handle load more option
+  }
+
+  res.render('category', {
+    posts,
+    title: req.params.category
+  });
 });
 
 module.exports = router;
