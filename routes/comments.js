@@ -10,6 +10,10 @@ router.post("/add", passport.checkAuthentication, function (req, res) {
       res.redirect('back');
   })
 });
+router.get("/delete/:commentId", async function (req, res) {
+  await Comment.findByIdAndDelete(req.params.commentId);
+  res.redirect('back');
+});
 
 
 module.exports = router;

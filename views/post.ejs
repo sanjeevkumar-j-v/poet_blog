@@ -121,6 +121,11 @@
                     </div>
                   </div>
                   <h4 class="tj kk wm qb">
+                    <% if (locals.user) { %>
+                      <% if (locals.user.name == 'Muthuvezhappan' || locals.user.name == 'Muthuvezhappan') { %>
+                        <span><a href="/comments/delete/<%= comment._id %>" class="red"> X </a></span>
+                      <% } %>
+                    <% } %>
                     <%= comment.content %>
                   </h4>
                 </div>
@@ -188,7 +193,7 @@
           </div>
         </div>
 
-        <div class="animate_top fb">
+        <!-- <div class="animate_top fb">
           <h4 class="tj kk wm qb">Categories</h4>
 
           <ul>
@@ -218,7 +223,7 @@
             </li>
 
           </ul>
-        </div>
+        </div> -->
 
       </div>
     </div>
