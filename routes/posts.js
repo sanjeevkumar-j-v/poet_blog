@@ -28,6 +28,7 @@ router.get("/view/:postId", async function (req, res) {
 
 router.get("/delete/:postId", async function (req, res) {
   await Post.findByIdAndDelete(req.params.postId);
+  await Comment.deleteMany({post: req.params.postId});
   res.redirect('/');
 });
 
