@@ -103,11 +103,11 @@
               <p>
                   <%= locals.user.name %>
               </p>
-              <a href="/posts/create" :class="{ ' yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl" style="color: black;" >Create New</a>
-              <a href="/users/sign-out" :class="{ ' yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl" style="color: black;" >Sign Out</a>
+              <a href="/posts/create" :class="{ ' yl' : page === 'home' : page === 'home' && stickyMenu }" class="ek xl red" >Create New</a>
+              <a href="/users/sign-out" :class="{ ' yl' : page === 'home' : page === 'home' && stickyMenu }" class="ek xl red" >Sign Out</a>
             <% } else { %>
-              <a href="/users/sign-in" :class="{ ' yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl" style="color: black;" >Sign In</a>
-              <a href="/users/sign-up" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi" style="color: black;" >Sign Up</a>
+              <a href="/users/sign-up" :class="{ ' yl' : page === 'home' : page === 'home' && stickyMenu }" class="ek xl red" >Sign Up</a>
+              <a href="/users/sign-in" :class="{ ' ' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi red" >Sign In</a>
             <% } %>
             </div>
           </div>
@@ -132,7 +132,7 @@
 
             <ul class="tc wf cg">
               <li>
-                <a href="#">
+                <a href="https://www.facebook.com/muthu.vezhappan.7">
                   <svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_48_1499)">
                       <path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z" fill="" />
@@ -146,7 +146,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://twitter.com/vezhappan">
                   <svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_48_1502)">
                       <path
@@ -163,7 +163,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/muthu-vezhappan-1021b247/">
                   <svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_48_1505)">
                       <path
@@ -187,8 +187,8 @@
               <h4 class="kk wm tj ec">Quick Links</h4>
 
               <ul>
-                <li><a href="#" class="sc xl vb">Home</a></li>
-                <li><a href="/#" class="sc xl vb">All Posts</a></li>
+                <li><a href="/" class="sc xl vb">Home</a></li>
+                <li><a href="/posts/category/all" class="sc xl vb">All Posts</a></li>
                 <li>
                   <a href="#contact" class="sc xl vb">
                     Contact 
@@ -202,14 +202,15 @@
               <h4 class="kk wm tj ec">Categories</h4>
 
               <ul>
-                <li><a href="#" class="sc xl vb">வாழ்க்கை</a></li>
-                <li><a href="#" class="sc xl vb">காதல்</a></li>
-                <li><a href="#" class="sc xl vb">நட்பு</a></li>
-                <li><a href="#" class="sc xl vb">இயற்கை</a></li>
-                <li><a href="#" class="sc xl vb">தத்துவம்</a></li>
-                <li><a href="#" class="sc xl vb">தேசப்பற்று</a></li>
-                <li><a href="#" class="sc xl vb">ஊக்கம்</a></li>
-                <li><a href="#" class="sc xl vb">பிற கவிதைகள்</a></li>
+                <li><a href="/posts/category/valkkai" class="sc xl vb">வாழ்க்கை</a></li>
+                <li><a href="/posts/category/kadhal" class="sc xl vb">காதல்</a></li>
+                <li><a href="/posts/category/natpu" class="sc xl vb">நட்பு</a></li>
+                <li><a href="/posts/category/iyarkai" class="sc xl vb">இயற்கை</a></li>
+                <li><a href="/posts/category/thathuvam" class="sc xl vb">தத்துவம்</a></li>
+                <li><a href="/posts/category/thesapatru" class="sc xl vb">தேசப்பற்று</a></li>
+                <li><a href="/posts/category/ookkam" class="sc xl vb">ஊக்கம்</a></li>
+                <li><a href="/posts/category/uravu" class="sc xl vb">உறவு</a></li>
+                <li><a href="/posts/category/others" class="sc xl vb">பிற கவிதைகள்</a></li>
               </ul>
             </div>
 
