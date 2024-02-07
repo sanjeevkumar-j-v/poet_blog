@@ -7,7 +7,25 @@
     <div class="tc sf yo zf kq">
       <div class="ro">
         <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
-          <img src="images/boy-studying.avif" alt="Blog" />
+          <% if (post.category == 'valkkai') { %>
+            <img src="images/valkkai.jpg" alt="Blog" />
+          <% } else if (post.category == 'kadhal') { %>
+            <img src="images/kadhal.jpg" alt="Blog" />
+          <% } else if (post.category == 'natpu') { %>
+            <img src="images/natpu.jpg" alt="Blog" />
+          <% } else if (post.category == 'iyarkai') { %>
+            <img src="images/iyarkai.jpg" alt="Blog" />
+          <% } else if (post.category == 'thathuvam') { %>
+            <img src="images/thathuvam.jpeg" alt="Blog" />
+          <% } else if (post.category == 'thesapatru') { %>
+            <img src="images/thesapatru.jpg" alt="Blog" />
+          <% } else if (post.category == 'ookkam') { %>
+            <img src="images/ookam.jpg" alt="Blog" />
+          <% } else if (post.category == 'uravu') { %>
+            <img src="images/uravu.jpg" alt="Blog" />
+          <% } else { %>
+            <img src="images/others.png" alt="Blog" />
+          <% } %>
 
           <h2 class="ek vj 2xl:ud-text-title-lg kk wm nb gb"><%=post.heading%></h2>
           <% if (locals.user) { %>
@@ -168,7 +186,7 @@
           </form>
         </div> -->
 
-        <div class="animate_top">
+        <!-- <div class="animate_top">
           <h4 class="tj kk wm qb">Related Posts</h4>
 
           <div>
@@ -184,14 +202,9 @@
                 <a href="#">சீற்றம்</a>
               </h5>
             </div>
-            <!-- <div class="tc fg 2xl:ud-gap-6">
-              <img src="images/blog-small-03.png" alt="Blog" />
-              <h5 class="wj kk wm xl bn ml il">
-                <a href="#">Tips to quickly improve your coding speed.</a>
-              </h5>
-            </div> -->
+            
           </div>
-        </div>
+        </div> -->
 
         <!-- <div class="animate_top fb">
           <h4 class="tj kk wm qb">Categories</h4>
