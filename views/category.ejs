@@ -38,13 +38,7 @@
         <% if (posts[0]) { %>
           <% for (post of posts) { %>
             <div class="animate_top sg vk rm xm post-card">
-              <div class="c rc i z-1 pg">
-                <img class="w-full" src="images/boy-studying.avif" alt="Blog" />
-
-                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="posts/view/<%=post._id%>" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-                </div>
-              </div>
+              <%- include('_postcard'); %>
 
               <div class="yh">
                 <h4 class="ek tj ml il kk wm xl eq vb">

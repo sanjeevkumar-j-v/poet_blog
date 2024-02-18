@@ -75,30 +75,7 @@
         <% if (newPosts[0]) { %>
           <% for (post of newPosts) { %>
             <div class="animate_top sg vk rm xm post-card">
-              <div class="c rc i z-1 pg">
-                <% if (post.category == 'valkkai') { %>
-                  <img class="w-full" src="images/valkkai.jpg" alt="Blog" />
-                <% } else if (post.category == 'kadhal') { %>
-                  <img class="w-full" src="images/kadhal.jpg" alt="Blog" />
-                <% } else if (post.category == 'natpu') { %>
-                  <img class="w-full" src="images/natpu.jpg" alt="Blog" />
-                <% } else if (post.category == 'iyarkai') { %>
-                  <img class="w-full" src="images/iyarkai.jpg" alt="Blog" />
-                <% } else if (post.category == 'thathuvam') { %>
-                  <img class="w-full" src="images/thathuvam.jpeg" alt="Blog" />
-                <% } else if (post.category == 'thesapatru') { %>
-                  <img class="w-full" src="images/thesapatru.jpg" alt="Blog" />
-                <% } else if (post.category == 'ookkam') { %>
-                  <img class="w-full" src="images/ookam.jpg" alt="Blog" />
-                <% } else if (post.category == 'uravu') { %>
-                  <img class="w-full" src="images/uravu.jpg" alt="Blog" />
-                <% } else { %>
-                  <img class="w-full" src="images/others.png" alt="Blog" />
-                <% } %>
-                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="posts/view/<%=post._id%>" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-                </div>
-              </div>
+              <%- include('_postcard'); %>
 
               <div class="yh">
                 <h4 class="ek tj ml il kk wm xl eq vb">
@@ -147,13 +124,7 @@
         <% if (mostLikedPosts[0]) { %>
           <% for (post of mostLikedPosts) { %>
             <div class="animate_top sg vk rm xm">
-              <div class="c rc i z-1 pg">
-                <img class="w-full" src="images/boy-studying.avif" alt="Blog" />
-
-                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="posts/view/<%=post._id%>" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-                </div>
-              </div>
+              <%- include('_postcard'); %>
 
               <div class="yh">
                 <h4 class="ek tj ml il kk wm xl eq vb">
