@@ -41,7 +41,7 @@
             <li><span class="rc kk wm">Category: </span> <%=post.category%></li>
             <li><span class="rc kk wm">Views: </span> <%=post.views%></li>
           </ul>
-
+          <h6 style="color: blue; ">பேசுவதற்கு கவிதை வாக்கியத்தைத் தேர்ந்தெடுக்கவும் / Please select the Kavithai text to speak.</h6>
           <p style="white-space:pre; width: auto;">
             <%=post.content%>
           </p>
@@ -407,6 +407,7 @@
 
 <script defer src="javascripts/bundle.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=0UkmOMZl"></script>
 <script>
   let executed = false;
   $(function() {
