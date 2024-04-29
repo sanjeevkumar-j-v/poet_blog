@@ -7,7 +7,7 @@
     <div class="tc sf yo zf kq">
       <div class="ro">
         <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
-          <% if (post.category == 'valkkai') { %>
+          <!-- <% if (post.category == 'valkkai') { %>
             <img src="images/valkkai.jpg" alt="Blog" />
           <% } else if (post.category == 'kadhal') { %>
             <img src="images/kadhal.jpg" alt="Blog" />
@@ -25,15 +25,10 @@
             <img src="images/uravu.jpg" alt="Blog" />
           <% } else { %>
             <img src="images/others.png" alt="Blog" />
-          <% } %>
+          <% } %> -->
 
           <h2 class="ek vj 2xl:ud-text-title-lg kk wm nb gb"><%=post.heading%></h2>
-          <% if (locals.user) { %>
-            <% if (locals.user.name == 'Muthuvezhappan') { %>
-              <h2 class="ek vj 2xl:ud-text-title-lg kk wm gb" style="color: red; text-decoration: underline;"><a href="/posts/delete/<%= post._id %>">DELETE</a></h2>
-              <h2 class="ek vj 2xl:ud-text-title-lg kk wm gb" style="color: blue; text-decoration: underline;"><a href="/posts/edit/<%= post._id %>">EDIT</a></h2>
-            <% } %>
-          <% } %>
+
 
           <ul class="tc uf cg 2xl:ud-gap-15 fb">
             <li><span class="rc kk wm">Author: </span> அ. முத்துவேழப்பன்</li>
@@ -42,10 +37,27 @@
             <li><span class="rc kk wm">Category: </span> <%=post.category%></li>
             <li><span class="rc kk wm">Views: </span> <%=post.views%></li>
           </ul>
-          <h6 style="color: blue; ">பேசுவதற்கு கவிதை வாக்கியத்தைத் தேர்ந்தெடுக்கவும் / Please select the Kavithai text to speak.</h6>
-          <p style="white-space:pre; width: auto;">
-            <%=post.content%>
-          </p>
+
+          <form action="#" method="POST">
+
+            <div class="fb">
+              <label class="rc ac" for="content">கவிதை</label>
+              <textarea
+                placeholder="கவிதை"
+                rows="14"
+                name="content"
+                id="content"
+                class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 ci"
+              >
+              <%=post.content%>
+              </textarea>
+            </div>
+  
+            <div class="tc xf">
+              <button class="vc rg lk gh ml il hi gi _l">Submit</button>
+            </div>
+          </form>
+
           <div class="likes tc rn">
             <!-- <div class="tc sf xf"> <div class="ek vj kk wm">Likes: </div></div> -->
           <% if (locals.user) { %>
@@ -56,190 +68,11 @@
             <div class="tc sf xf"> <div class="ek vj kk wm likes-count"><%= post.likes_count %> Likes </div></div>
           </div>
 
-          <% if (locals.user) { %>
-            <div class="i va bb ye jb">
-              <form action="/comments/add" method="POST">
-                <div class="fb">
-                  <h2 class="ek vj 2xl:ud-text-title-lg kk wm nb gb">Please add your comments</h2>
-                  <textarea
-                  placeholder="Type comment here..."
-                  rows="2"
-                  name="content"
-                  id="content"
-                  class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 ci"
-                  ></textarea>
-                </div>
-                <input type="hidden" name="username" value="<%=locals.user.name%>">
-                <input type="hidden" name="user" value="<%=locals.user._id%>">
-                <input type="hidden" name="post" value="<%=post.id%>">
-                <div class="tc xf">
-                  <button class="vc rg lk gh ml il hi gi _l">Add Comment</button>
-                </div>
-              </form>
-            </div>
-          <% } %>
-            
-          <ul class="tc wf bg sb">
-            <li>
-              <p class="sj kk wm tb">Share On:</p>
-            </li>
-            <li>
-              <a href="#" class="tc wf xf yd ad rg ml il ih wk">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_47_28)">
-                <path d="M11.6663 11.25H13.7497L14.583 7.91663H11.6663V6.24996C11.6663 5.39163 11.6663 4.58329 13.333 4.58329H14.583V1.78329C14.3113 1.74746 13.2855 1.66663 12.2022 1.66663C9.93967 1.66663 8.33301 3.04746 8.33301 5.58329V7.91663H5.83301V11.25H8.33301V18.3333H11.6663V11.25Z" fill="white"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_47_28">
-                <rect width="20" height="20" fill="white"/>
-                </clipPath>
-                </defs>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="tc wf xf yd ad rg ml il jh wk">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_47_47)">
-                <path d="M18.4683 4.71327C17.8321 4.99468 17.1574 5.1795 16.4666 5.26161C17.1947 4.82613 17.7397 4.14078 17.9999 3.33327C17.3166 3.73994 16.5674 4.02494 15.7866 4.17911C15.2621 3.61792 14.5669 3.24574 13.809 3.12043C13.0512 2.99511 12.2732 3.12368 11.596 3.48615C10.9187 3.84862 10.3802 4.42468 10.0642 5.12477C9.74812 5.82486 9.67221 6.60976 9.84825 7.35744C8.46251 7.28798 7.10686 6.92788 5.86933 6.30049C4.63179 5.67311 3.54003 4.79248 2.66492 3.71577C2.35516 4.24781 2.19238 4.85263 2.19326 5.46827C2.19326 6.67661 2.80826 7.74411 3.74326 8.36911C3.18993 8.35169 2.64878 8.20226 2.16492 7.93327V7.97661C2.16509 8.78136 2.44356 9.56129 2.95313 10.1842C3.46269 10.807 4.17199 11.2345 4.96075 11.3941C4.4471 11.5333 3.90851 11.5538 3.38576 11.4541C3.60814 12.1468 4.04159 12.7526 4.62541 13.1867C5.20924 13.6208 5.9142 13.8614 6.64159 13.8749C5.91866 14.4427 5.0909 14.8624 4.20566 15.1101C3.32041 15.3577 2.39503 15.4285 1.48242 15.3183C3.0755 16.3428 4.93 16.8867 6.82409 16.8849C13.2349 16.8849 16.7408 11.5741 16.7408 6.96827C16.7408 6.81827 16.7366 6.66661 16.7299 6.51827C17.4123 6.02508 18.0013 5.41412 18.4691 4.71411L18.4683 4.71327Z" fill="white"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_47_47">
-                <rect width="20" height="20" fill="white"/>
-                </clipPath>
-                </defs>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="tc wf xf yd ad rg ml il lh wk">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_47_53)">
-                <path d="M5.78353 4.16665C5.78331 4.60867 5.6075 5.03251 5.29478 5.34491C4.98207 5.65732 4.55806 5.8327 4.11603 5.83248C3.674 5.83226 3.25017 5.65645 2.93776 5.34373C2.62536 5.03102 2.44997 4.60701 2.4502 4.16498C2.45042 3.72295 2.62622 3.29912 2.93894 2.98671C3.25166 2.67431 3.67567 2.49892 4.1177 2.49915C4.55972 2.49937 4.98356 2.67517 5.29596 2.98789C5.60837 3.30061 5.78375 3.72462 5.78353 4.16665ZM5.83353 7.06665H2.5002V17.5H5.83353V7.06665ZM11.1002 7.06665H7.78353V17.5H11.0669V12.025C11.0669 8.97498 15.0419 8.69165 15.0419 12.025V17.5H18.3335V10.8916C18.3335 5.74998 12.4502 5.94165 11.0669 8.46665L11.1002 7.06665Z" fill="white"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_47_53">
-                <rect width="20" height="20" fill="white"/>
-                </clipPath>
-                </defs>
-                </svg>
-              </a>
-            </li>
-          </ul>
-
-          <div class="i va bb ye jb">
-            <h2 class="ek vj 2xl:ud-text-title-lg kk wm nb gb">Comments:</h2>
-
-            <% if (comments[0]) { %>
-              <% for (comment of comments) { %>
-                <div class="ai">
-                  <div class="tc uf wf ag jq">
-                    <div class="tc wf ag">
-                      <img src="images/icon-man.svg" alt="User" />
-                      <p><%= comment.username %></p>
-                    </div>
-                  </div>
-                  <h4 class="tj kk wm qb">
-                    <% if (locals.user) { %>
-                      <% if (locals.user.name == 'Muthuvezhappan' || locals.user.name == 'Muthuvezhappan') { %>
-                        <span><a href="/comments/delete/<%= comment._id %>" class="red"> X </a></span>
-                      <% } %>
-                    <% } %>
-                    <%= comment.content %>
-                  </h4>
-                </div>
-              <% } %>
-            <% } else { %>
-              <h4>No comments added yet.</h4>
-            <% } %>
-
-          </div>
-          
 
         </div>
       </div>
 
-      <div class="jn/2 so">
-        <!-- <div class="animate_top fb">
-          <form action="#">
-            <div class="i">
-              <input
-                type="text"
-                placeholder="Search Here..."
-                class="vd sm _g ch pm vk xm rg gm dm/40 dn/40 li mi"
-              />
-
-              <button class="h r q _h">
-                <svg
-                  class="th ul ml il"
-                  width="21"
-                  height="21"
-                  viewBox="0 0 21 21"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM14.025 13.875C15.2941 12.5699 16.0029 10.8204 16 9C16 5.132 12.867 2 9 2C5.132 2 2 5.132 2 9C2 12.867 5.132 16 9 16C10.8204 16.0029 12.5699 15.2941 13.875 14.025L14.025 13.875Z"
-                  />
-                </svg>
-              </button>
-            </div>
-          </form>
-        </div> -->
-
-        <!-- <div class="animate_top">
-          <h4 class="tj kk wm qb">Related Posts</h4>
-
-          <div>
-            <div class="tc fg 2xl:ud-gap-6 qb">
-              <img src="images/poor.jpeg" alt="Blog" style="width: 100px;" />
-              <h5 class="wj kk wm xl bn ml il">
-                <a href="#">ஏழையின் பசி</a>
-              </h5>
-            </div>
-            <div class="tc fg 2xl:ud-gap-6 qb">
-              <img src="images/anger.jpeg" alt="Blog" style="width: 100px;"/>
-              <h5 class="wj kk wm xl bn ml il">
-                <a href="#">சீற்றம்</a>
-              </h5>
-            </div>
-            
-          </div>
-        </div> -->
-
-        <!-- <div class="animate_top fb">
-          <h4 class="tj kk wm qb">Categories</h4>
-
-          <ul>
-            <li class="ql vb du-ease-in-out il xl">
-              <a href="#">வாழ்க்கை</a>
-            </li>
-            <li class="ql vb du-ease-in-out il xl">
-              <a href="#">காதல்</a>
-            </li>
-            <li class="ql vb du-ease-in-out il xl">
-              <a href="#">நட்பு</a>
-            </li>
-            <li class="ql vb du-ease-in-out il xl">
-              <a href="#">இயற்கை</a>
-            </li>
-            <li class="ql vb du-ease-in-out il xl">
-              <a href="#">தத்துவம்</a>
-            </li>
-            <li class="ql vb du-ease-in-out il xl">
-              <a href="#">தேசப்பற்று</a>
-            </li>
-            <li class="ql vb du-ease-in-out il xl">
-              <a href="#">ஊக்கம்</a>
-            </li>
-            <li class="ql vb du-ease-in-out il xl">
-              <a href="#">பிற கவிதைகள்</a>
-            </li>
-
-          </ul>
-        </div> -->
-
-      </div>
+ 
     </div>
   </div>
 </section>
@@ -408,7 +241,6 @@
 
 <script defer src="javascripts/bundle.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://code.responsivevoice.org/responsivevoice.js?key=0UkmOMZl"></script>
 <script>
   let executed = false;
   $(function() {

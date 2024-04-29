@@ -26,6 +26,21 @@ router.get("/view/:postId", async function (req, res) {
   });
 });
 
+router.get("/edit/:postId", async function (req, res) {
+  var post = await Post.findById(req.params.postId);
+
+  res.render('editpost', {
+    post,
+    title: post.heading
+  });
+});
+
+router.post("/edit/:postId", async function (req, res) {
+  var post = await Post.findByIdAndUpdate(req.params.postId, {'content' : req.body.content},);
+
+  res.redirect("/posts/view/" + req.params.postId);
+});
+
 router.get("/delete/:postId", async function (req, res) {
   await Post.findByIdAndDelete(req.params.postId);
   await Comment.deleteMany({post: req.params.postId});
